@@ -35,7 +35,7 @@ export default function FormChat({ conversationId, userId }: {
   const [speechSupported, setSpeecSupported] = useState(false)
   const [hasMicPermission, setHasMicPermission] = useState<boolean | null>(null)
 
-  const recognitionRef = useRef<any>(null)
+  const recognitionRef = useRef<SpeechRecognition | null>(null)
 
   const sendMessage = useMutation(api.chats.sendMessage)
 
@@ -71,7 +71,7 @@ export default function FormChat({ conversationId, userId }: {
           toast.success("Started Listening")
         }
 
-        recognition.onresult = (event: any) => {
+        recognition.onresult = (event) => {
           const current = event.resultIndex;
           const transcript = event.results[current][0].transcript
           const currentMessage = watch("message") || ""
@@ -81,7 +81,7 @@ export default function FormChat({ conversationId, userId }: {
           }
         }
 
-        recognition.onerror = (event: any) => {
+        recognition.onerror = (event) => {
           console.log('Speech recognition error: ', event.error)
           setIsListening(false)
 
