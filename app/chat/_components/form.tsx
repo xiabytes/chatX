@@ -228,7 +228,7 @@ export default function FormChat({ conversationId, userId }: {
   }
 
   return (
-    <div className="bg-muted dark:bg-[#202C33">
+    <div className="bg-muted dark:bg-[#202C33]">
       {attachments?.length > 0 && (
         <div className="p-2 flex gap-2 flex-wrap border-b border-border dark:border-[#313D45]">
           {attachments.map((url, index) => (
@@ -249,7 +249,7 @@ export default function FormChat({ conversationId, userId }: {
       )}
 
       <form onSubmit={handleSubmit(onSubmit)}
-        className="bg-muted dark:bg-[#202C33] p-4 flex items-center space-x-2"
+        className={`bg-muted dark:bg-[#202C33] p-4 flex items-center space-x-2  ${attachments?.length > 0 && "pb-[5rem]" } `}
       >
         <div className="relative">
           <label htmlFor="file-upload"

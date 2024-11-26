@@ -114,7 +114,7 @@ export default function Sidebar({ preloadedUserInfo, preloadedConversations }: S
                   <h2 className="text-[#E9EDEF] text-base font-normal truncate">
                     <HighlightText text={chat.name} searchQuery={searchQuery} />
                   </h2>
-                  <span className="text-[#8696A0] text-xs ml-2 shrink-0">Yesterday</span>
+                  <span className="text-[#8696A0] text-xs ml-2 shrink-0">{chat.time}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-[#8696A0] text-sm truncate pr-2">
