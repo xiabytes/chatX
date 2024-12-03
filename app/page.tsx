@@ -9,7 +9,7 @@ export default function Home() {
           Welcome to ChatX
         </h1>
         <p className="text-xl md:text-2xl text-white/80">
-          It&apos;s like WhatsApp, but not... You know what I mean.
+          Just like WhatsApp, but not... You know what I mean.
         </p>
         <Button
           asChild
